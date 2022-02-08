@@ -73,13 +73,17 @@
                 playerSelection = window.prompt("Enter Rock, Paper or Scissors");
                 result = playRound(playerSelection,computerPlay());
                 console.log(result);
+
+                //scores
+
                 if (result.startsWith("You lose")) {
                     computerScore++;
                 } else if (result.startsWith("You win")) {
                     playerScore++;
                 }
-                round++;
                 console.log("Computer = " + computerScore + " Player = " + playerScore);
+
+                round++;
             }
 
             //declare a winner
