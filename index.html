@@ -10,13 +10,12 @@
     <script>
          
         //intro text to Game
-        //count 1, 2, 3 rock, paper, scissors
         //ask user for a choice
-        //generate a computer choice **
-        //compare computer's choice vs user's **
-        //show the result (win, lose or tie) **
+        //generate a computer choice
+        //compare computer's choice vs user's
+        //show the result (win, lose or tie)
         //show a counter with the number of rounds
-        //repeat the game until 5 rounds are completed **
+        //repeat the game until 5 rounds are completed
         //declare a winner
         
         function computerPlay() {
@@ -38,8 +37,8 @@
             //compare the parameters, declare a winner and a loser
 
             playerSelection = playerSelection.toLowerCase();
-            console.log(playerSelection);
-            console.log(computerSelection);
+            console.log("Player: " + playerSelection);
+            console.log("Computer: " + computerSelection);
 
             if (playerSelection === computerSelection)   {
                 return "Tie! Better luck next time.";
@@ -54,13 +53,13 @@
             } else if (playerSelection === "scissors" && computerSelection === "rock") {
                 return "You lose! rock beats scissors.";
             } else {
-            //(playerSelection === "scissors" && computerSelection === "paper") {
                 return "You win! Scissors beat paper.";
             }
         }
 
         function game() {
             let round = 1;
+            let result = "";
             let playerScore = 0;
             let computerScore = 0;
 
@@ -69,12 +68,23 @@
             //play the game 5 times
             
             while(round<=5) {
+                console.log("-------------------------");
+                console.log(`Round ${round}:`);
                 playerSelection = window.prompt("Enter Rock, Paper or Scissors");
-                console.log(playRound(playerSelection,computerPlay()));
+                result = playRound(playerSelection,computerPlay());
+                console.log(result);
+                if (result.startsWith("You lose")) {
+                    computerScore++;
+                } else if (result.startsWith("You win")) {
+                    playerScore++;
+                }
                 round++;
+                console.log("Computer = " + computerScore + " Player = " + playerScore);
             }
 
             //declare a winner
+
+            console.log("-------------------------");
 
             if (playerScore < computerScore) {
                 console.log("You lose! Hahahaha.");
