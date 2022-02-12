@@ -5,101 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    <script>
-         
-        //intro text to Game
-        //ask user for a choice
-        //generate a computer choice
-        //compare computer's choice vs user's
-        //show the result (win, lose or tie)
-        //show a counter with the number of rounds
-        //repeat the game until 5 rounds are completed
-        //declare a winner
-        
-        function computerPlay() {
-        
-            //generate a random number from 1 to 3 and return the string rock, paper or scissors depending on the number
-
-            const randomNumber = Math.floor(Math.random()*3)+1;
-            if (randomNumber === 1) {
-                return "rock";
-            } else if (randomNumber === 2) {
-                return "paper";
-            } else {
-                return "scissors";
-            }
-        }
-
-        function playRound(playerSelection,computerSelection) {
-
-            //compare the parameters, declare a winner and a loser
-
-            playerSelection = playerSelection.toLowerCase();
-            console.log("Player: " + playerSelection);
-            console.log("Computer: " + computerSelection);
-
-            if (playerSelection === computerSelection)   {
-                return "Tie! Better luck next time.";
-            } else if (playerSelection === "rock" && computerSelection === "paper") {
-                return "You lose! Paper beats rock.";
-            } else if (playerSelection === "rock" && computerSelection === "scissors") {
-                return "You win! rock beats scissors.";
-            } else if (playerSelection === "paper" && computerSelection === "rock") {
-                return "You win! Paper beats rock.";
-            } else if (playerSelection === "paper" && computerSelection === "scissors") {
-                return "You lose! Scissors beat paper.";
-            } else if (playerSelection === "scissors" && computerSelection === "rock") {
-                return "You lose! rock beats scissors.";
-            } else {
-                return "You win! Scissors beat paper.";
-            }
-        }
-
-        function game() {
-            let round = 1;
-            let result = "";
-            let playerScore = 0;
-            let computerScore = 0;
-
-            console.log("This is Rock Paper Scissors");
-
-            //play the game 5 times
-            
-            while(round<=5) {
-                console.log("-------------------------");
-                console.log(`Round ${round}:`);
-                playerSelection = window.prompt("Enter Rock, Paper or Scissors");
-                result = playRound(playerSelection,computerPlay());
-                console.log(result);
-
-                //scores
-
-                if (result.startsWith("You lose")) {
-                    computerScore++;
-                } else if (result.startsWith("You win")) {
-                    playerScore++;
-                }
-                console.log("Computer = " + computerScore + " Player = " + playerScore);
-
-                round++;
-            }
-
-            //declare a winner
-
-            console.log("-------------------------");
-
-            if (playerScore < computerScore) {
-                console.log("You lose! Hahahaha.");
-            } else if (playerScore > computerScore) {
-                console.log("You win! Yay.");
-            } else {
-                console.log("It's a tie.");
-            }
-        }
-
-        game();
-    </script>
+    <div id="buttons">
+        <button class="rock">ROCK</button>
+        <button class="paper">PAPER</button>
+        <button class="scissors">SCISSORS</button>
+    </div>
+    <p class="resultText"></p>
+    <div id="computerScore">Computer: 0</div>
+    <div id="userScore">You: 0</div>
 </body>
 </html>
