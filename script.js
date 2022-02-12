@@ -51,7 +51,7 @@ function game() {
                 break;
         }
 
-        {
+        if (userScore < 5 && computerScore < 5) {
             const resultText = document.querySelector('.resultText');
             
             if (userSelection === computerSelection)   {
@@ -120,7 +120,6 @@ function game() {
                 }
             }
         }
-        
     }));
 }
 
