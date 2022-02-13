@@ -74,8 +74,10 @@ function compareSelection(computerSelection, userSelection) {
 function checkScores() {
     if (computerScore < 5 && userScore < 5) {
         return true;
-    } else eraseScreen();
+    } else false;
 }
+
+//implement eraseScreen after game is finished
 
 function eraseScreen() {
     const elem = document.querySelector('body');
@@ -117,7 +119,7 @@ function playRound(e) {
     }
 
     if (checkScores()) compareSelection(computerSelection, userSelection);
-    else return;
+    else eraseScreen();
 }
 
 let computerScore = 0;
