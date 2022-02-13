@@ -6,15 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;600&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <div id="buttons">
-        <button class="rock">ROCK</button>
-        <button class="paper">PAPER</button>
-        <button class="scissors">SCISSORS</button>
+    <div id="head">
+        <img src="./title/title.svg">
     </div>
-    <p class="resultText"></p>
-    <div id="computerScore">Computer: 0</div>
-    <div id="userScore">You: 0</div>
+    <div id="currentFight">
+        <div id="selections">
+            <div id="user" class="square"></div>
+            <div id="computer" class="square"></div>
+        </div>
+        <div id="resultText">-</div>
+    </div>
+    <div id="score">
+        Score
+        <div id="scoreNumbers">
+            <div id="userScore">0</div>
+            <div> - </div>
+            <div id="computerScore">0</div>
+        </div>
+    </div>
+    <div id="buttons">
+        <button class="rock">✊</button>
+        <button class="paper">✋</button>
+        <button class="scissors">✌</button>
+    </div>
+    <div id="footer">
+        <div id="references">
+            <div class="links"> <a href="https://www.vecteezy.com/free-vector/3d">3d font by Vecteezy</a></div>
+            <div class="links"> <a href="https://icon-icons.com/">Icons by Icons-Icons</a></div>
+        </div>
+        <div class="links"> <a href="https://github.com/Moriere/rock-paper-scissors">Made by Moriere</a></div>
+    </div>
 </body>
 </html>
