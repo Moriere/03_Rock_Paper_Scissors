@@ -78,7 +78,7 @@ body {
     background-color: #98B4AA;
 }
 
-#buttons button {
+button {
     height: 100px;
     width: 100px;
     display: flex;
@@ -119,4 +119,43 @@ a {
 
 a:hover {
     font-weight: 600;
+}
+
+#winLose {
+    font-size: 100px;
+    color: #f1e0ac;
+}
+
+.replayButton {
+    height: 100px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1e0ac;
+    border: 0px;
+    border-radius: 10px;
+    box-shadow: 5px 5px #dcdcdc;
+    transition: all 0.1s;
+    font-size: 40px;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+#endScreen {
+    position: absolute;
+    background-color: #495371;
+    width: 700px;
+    height: 500px;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    height: 100vh;
+    flex: 1 1 1;
+}
+
+body.center {
+    justify-content: center;
+    align-items: center;
 }
